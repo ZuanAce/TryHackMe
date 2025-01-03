@@ -1,6 +1,8 @@
 # Junior Security Analyst Intro
 > Play through a day in the life of a Junior Security Analyst, their responsibilities and qualifications needed to land a role as an analyst.
 > 
+> ![image](https://github.com/user-attachments/assets/2dbebe9e-01de-42d5-b291-28b936003d3f)
+
 ## Task 1
 ### A career as a Junior (Associate Security Analyst)
 In the Junior Security Analyst role, you will be a Triage Specialist. You will spend a lot of time triaging or monitoring the event logs and alerts.
