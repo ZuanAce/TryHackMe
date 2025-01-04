@@ -1,7 +1,7 @@
 # Pyramid Of Pain
 > Learn what is the Pyramid of Pain and how to utilize this model to determine the level of difficulty it will cause for an adversary to change the indicators associated with them, and their campaign.
 > 
-> ![image](https://github.com/user-attachments/assets/2dbebe9e-01de-42d5-b291-28b936003d3f)
+> ![image](https://github.com/user-attachments/assets/85ed21a6-d521-4048-a7ee-a3ced92ab35f)
 
 ## Task 1
 ### Introduction
@@ -198,8 +198,59 @@ Network artifacts can be detected in Wireshark PCAPs (file that contains the pac
 
 ## Task 7
 ### Tools (Challenging)
+The attacker would most likely give up trying to break into your network or go back and try to create a new tool that serves the same purpose. It will be a game over for the attackers as they would need to invest some money into building a new tool (if they are capable of doing so), find the tool that has the same potential, or even gets some training to learn how to be proficient in a certain tool. 
 
+Attackers would use the utilities to create malicious macro documents (maldocs) for spearphishing attempts, a backdoor that can be used to establish C2 (Command and Control Infrastructure), any custom .EXE, and .DLL files, payloads, or password crackers.
+
+Antivirus signatures, detection rules, and YARA rules can be great weapons to use against attackers at this stage.
+
+**MalwareBazaar** and **Malshare** are good resources to provide access to the samples, malicious feeds, and YARA results - these all can be very helpful when it comes to threat hunting and incident response. 
+
+For detection rules, **SOC Prime Threat Detection Marketplace** is a great platform, where security professionals share their detection rules for different kinds of threats including the latest CVE's that are being exploited in the wild by adversaries. 
+
+**Fuzzy hashing** is also a strong weapon against the attacker's tools. Fuzzy hashing helps you to perform similarity analysis - match two files with minor differences based on the fuzzy hash values. One of the examples of fuzzy hashing is the usage of **SSDeep**; on the **SSDeep** official website, you can also find the complete explanation for fuzzy hashing. 
+
+### Question
+1. Provide the method used to determine similarity between the files.
+
+   **Answer**: `Fuzzy Hashing`
+
+2. Provide the alternative name for fuzzy hashes without the abbreviation.
+
+   **Answer**: `context triggered piecewise hashes`
+
+## Task 8
+### TTPs (Tough)
+TTPs stands for Tactics, Techniques & Procedures. This includes the whole **MITRE ATT&CK Matrix**, which means all the steps taken by an adversary to achieve his goal, starting from phishing attempts to persistence and data exfiltration. 
+
+If you can detect and respond to the TTPs quickly, you leave the adversaries almost no chance to fight back.
+
+### Question
+1. Navigate to ATT&CK Matrix webpage. How many techniques fall under the Exfiltration category?
+
+   ![image](https://github.com/user-attachments/assets/f396ecc9-71fc-457b-884f-75f531e7d625)
+
+   **Answer**: `9`
    
+2. Chimera is a China-based hacking group that has been active since 2018. What is the name of the commercial, remote access tool they use for C2 beacons and data exfiltration?
 
+   To find this information, navigate to the MITRE ATT&CK Framework, specifically:
+   - Exfiltration > Exfiltration Over C2 Channel (T1041) > Look for details about Chimera (ID: G0114).
+
+   ![image](https://github.com/user-attachments/assets/263ff74d-cf28-4561-b9d3-cfb32bf761b9)
+
+   **Answer**: `Cobalt Strike`
+
+## Task 9
+### Practical: The Pyramid of Pain
+Deploy the static site attached to this task and place the prompts into the correct tiers in the pyramid of pain! Complete the static site. What is the flag?
+- Tools: The attacker has utilised these to accomplish their objective.
+- TTP: The attackers plans and objectives.
+- Hash values: These signatures can be used to attribute payloads and artefacts to an actor.
+- Domain Names: An attacker has purchased this and used it in a typo-squatting campaign.
+- IP addresses: These addresses can be used to identify the infrastructure an attacker is using for their campaign.
+- Network: These artifacts can present themselves as C2 traffic for example.
+
+Flag: `THM{PYRAMIDS_COMPLETE}`
 
 
