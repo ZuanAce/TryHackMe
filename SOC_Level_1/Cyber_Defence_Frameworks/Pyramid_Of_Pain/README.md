@@ -94,9 +94,84 @@ Read the following report (generated from any.run) for this sample [here](https:
 
 ## Task 4
 ### Domain Names (Simple)
+Domain name: mapping an IP address to a string of text. A domain name can contain a domain and a top-level domain (evilcorp.com) or a sub-domain followed by a domain and top-level domain (tryhackme.evilcorp.com). 
+
+Domain Names can be a little more difficult for attackers to change as they would most likely need to purchase the domain, register it and modify DNS records. Unfortunately for defenders, many DNS providers have loose standards and provide APIs to make it even easier for the attacker to change the domain.
+
+Punnycode: a way of converting words that cannot be written in ASCII, into a Unicode ASCII encoding.
+
+Internet Explorer, Google Chrome, Microsoft Edge, and Apple Safari are now pretty good at translating the obfuscated characters into the full Punycode domain name.
+
+To detect malicious domains, proxy logs or web server logs can be used.
+
+Attackers usually hide the malicious domains under URL shorteners. A URL Shortener is a tool that creates a short and unique URL that will redirect to the specific website specified during the initial step of setting up the URL Shortener link. 
+
+> [!TIP]
+> Viewing Connections in Any.run
+> HTTP Requests: useful to see what resources are being retrieved from a webserver, such as a dropper or a callback.
+> 
+> Connections: useful to see if a process communicates with another host. For example, this could be C2 traffic, uploading/downloading files over FTP, etc.
+>
+> DNS Requests: Malware often makes DNS requests to check for internet connectivity (I.e. if It can't reach the internet/call home, then it's probably being sandboxed or is useless).  
+
+Go to [this report on app.any.run](https://app.any.run/tasks/a66178de-7596-4a05-945d-704dbf6b3b90) to answer the questions for this task.
+
+### Question
+1. Provide the first suspicious domain request you are seeing.
+
+   ![image](https://github.com/user-attachments/assets/f51bfe16-d555-41b6-a42f-8e8a84795a99)
+
+   **Answer**: `craftingalegacy.com`
+
+2. What term refers to an address used to access websites?
+
+   **Answer**: `Domain Name`
+
+3. What type of attack uses Unicode characters in the domain name to imitate the a known domain?
+
+   **Answer**: `Punnycode attack`
+
+4. Provide the redirected website for the shortened URL using a preview: https://tinyurl.com/bw7t8p4u
+
+   Using [CheckShortURL](https://checkshorturl.com/) allows you to preview the final destination of a shortened link without visiting it.
+
+   ![image](https://github.com/user-attachments/assets/d34924e4-3ab4-421e-b2d8-fe7317b341a2)
+
+   **Answer:** `https://tryhackme.com/`
+
+## Task 5
+### Host Artifacts (Annoying)
+Host artifacts are the traces or observables that attackers leave on the system, such as registry values, suspicious process execution, attack patterns or IOCs (Indicators of Compromise), files dropped by malicious applications, or anything exclusive to the current threat.
+
+Examples: 
+- Suspicious process execution from Word
+- Suspicious events followed by opening a malicious application
+- Files modified/dropped by the malicious actor
+
+A security vendor has analysed the malicious sample for us. Review the report [here](https://assets.tryhackme.com/additional/pyramidofpain/task5-report.pdf) to answer the following questions.
+
+### Question
+1. A process named **regidle.exe** makes a POST request to an IP address based in the United States (US) on **port 8080**. What is the IP address?
+
+   By reviewing the network activity and filtering for POST requests to US-based IP addresses on port 8080, it was determined that the IP address is 96.126.101.6.
+
+   ![image](https://github.com/user-attachments/assets/847a9cd1-e628-455b-9fa4-b8c5ecb06b20)
+
+   **Answer**:`96.126.101.6`
+
+2. The actor drops a malicious executable (EXE). What is the name of this executable?
+
+   Reviewing page 4 of the report under behavioral activities reveals that an executable file was dropped shortly after the process started. The file is named `G_jugk.exe` (PID: 1640).
    
+   ![image](https://github.com/user-attachments/assets/dab8109f-734f-44e8-9ca6-fc2ffca2d686)
 
+   **Answer**: `G_jugk.exe`
 
+3. Look at this [report](https://assets.tryhackme.com/additional/pyramidofpain/vtotal2.png) by Virustotal. How many vendors determine this host to be malicious?
+
+   ![image](https://github.com/user-attachments/assets/259003b2-cc9b-4668-a258-6ce25e84f011)
+
+   **Answer**: `9`
 
 
 
