@@ -173,9 +173,31 @@ A security vendor has analysed the malicious sample for us. Review the report [h
 
    **Answer**: `9`
 
+## Task 6
+### Network Artifacts (Annoying)
+A network artifact can be a user-agent string, C2 information, or URI patterns followed by the HTTP POST requests.An attacker might use a User-Agent string that hasn’t been observed in your environment before or seems out of the ordinary. The User-Agent is defined by RFC2616 as the request-header field that contains the information about the user agent originating the request.
 
+Network artifacts can be detected in Wireshark PCAPs (file that contains the packet data of a network) by using a network protocol analyzer such as `TShark` or exploring IDS (Intrusion Detection System) logging from a source such as `Snort`.
 
+### Question
+1. What browser uses the User-Agent string shown in the screenshot above?
 
+   To determine the browser, search for the `User-Agent string Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E)` online.
+
+   By referencing [user-agents.net](https://user-agents.net/string/mozilla-4-0-compatible-msie-7-0-windows-nt-6-1-trident-7-0-slcc2-net-clr-2-0-50727-net-clr-3-5-30729-net-clr-3-0-30729-media-center-pc-6-0-net4-0c-net4-0e-tablet-pc-2-0-mozilla-4-0-compatible-msie-7-0-windows-nt-6-1-99790119bd400a023a3a94bd86a8d6a3ba940dde), it is confirmed that the browser in question is Internet Explorer.
+
+   ![image](https://github.com/user-attachments/assets/431525b8-b3d3-4f15-9150-494dcad20291)
+
+   **Answer**: `Internet Explorer`
+
+2. How many POST requests are in the screenshot from the pcap file?
+
+   ![image](https://github.com/user-attachments/assets/9d15b311-c04d-4b14-b2f9-e8b0c440362b)
+
+   **Answer**: `6`
+
+## Task 7
+### Tools (Challenging)
 
    
 
